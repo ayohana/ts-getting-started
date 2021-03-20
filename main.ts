@@ -1,12 +1,19 @@
-// To run this module, enter the following CLI command:
-// node ./build/main.js
-// Output will be displayed in the console
+// To see output in the console, etner the following CLI commands:
+// tsc
+// node main.js
 
-import { returnGreeting } from './greetings_module.js';             // imports a single function in the module
-import * as allGreetingFunctions from './greetings_module.js';   // imports all exported components in the module
+import dotenv from 'dotenv';
 
-import { returnGreeting as returnGreetingLength } from './greetings-utilities_module.js';
+// config reads your .env file, parses the contents, assigns it to process.env, 
+// and returns an object with a parsed key containing the loaded content 
+// or an error key if it failed.
+const result = dotenv.config();
 
-returnGreeting('Hola!')         // Displays 'The message from Greetings_module is Hola!'
-allGreetingFunctions.returnGreeting('Bonjour');  // Displays 'The message from Greetings_module is Bonjour!'
-returnGreetingLength('Ciao!');  // Displays 'The message from GreetingsWithLength_module is Ciao! It is 5 characters long.'
+if (result.error) {
+    throw result.error;
+}
+
+console.log(result.parsed);  // Returns { DB_HOST: 'localhost', WEB_HOST: 'staging.adventure-works.com' }
+
+console.log(process.env.DB_HOST);
+console.log(process.env.WEB_HOST);
