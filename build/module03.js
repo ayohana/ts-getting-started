@@ -28,7 +28,7 @@ let anotherLoan = {
     interestRate: 5,
     months: 180
 };
-let interestOnlyPayment = calculateInterestOnlyLoanPayment(myLoan);
+let interestPayment = calculateInterestOnlyLoanPayment(myLoan);
 let conventionalPayment = calculateConventionalLoanPayment(anotherLoan);
-console.log(interestOnlyPayment); //* Returns "The interest only loan payment is 125.00" 
+console.log(interestPayment); //* Returns "The interest only loan payment is 125.00" 
 console.log(conventionalPayment); //* Returns "The conventional loan payment is 237.24" 
