@@ -2,15 +2,15 @@
    Lab Start  */
 
 /*  EXERCISE 1
-    TODO: Declare a new function type for the sortDescending and sortAscending functions. */
+    TODO: Declare a new function type for the sortDesc and sortAsc functions. */
 type compareFunctionType = (a: number, b: number) => number;
 
-/*  TODO: Convert the sortDescending and sortAscending functions to anonymous 
+/*  TODO: Convert the sortDesc and sortAsc functions to anonymous 
     functions. */
 
-/*  sortDescending is a comparison function that tells the sort method how to sort 
+/*  sortDesc is a comparison function that tells the sort method how to sort 
     numbers in descending order */
-let sortDescending: compareFunctionType = (a: number, b: number) => {
+let sortDesc: compareFunctionType = (a: number, b: number) => {
     if (a > b) {
         return -1;;
     } else if (b > a) {
@@ -20,9 +20,9 @@ let sortDescending: compareFunctionType = (a: number, b: number) => {
     }
 }
     
-/*  sortDescending is a comparison function that tells the sort method how to sort 
+/*  sortAsc is a comparison function that tells the sort method how to sort 
     numbers in ascending order. */
-let sortAscending: compareFunctionType = (a, b) => {
+let sortAsc: compareFunctionType = (a, b) => {
     if (a > b) {
         return 1;
     } else if (b > a) {
@@ -52,9 +52,9 @@ function buildArray(items: number, sortOrder: 'ascending' | 'descending'): numbe
     }
 
     if (sortOrder === 'ascending') {
-        return randomNumbers.sort(sortAscending);
+        return randomNumbers.sort(sortAsc);
     } else {
-        return randomNumbers.sort(sortDescending);
+        return randomNumbers.sort(sortDesc);
     }
 }
 

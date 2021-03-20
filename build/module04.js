@@ -1,11 +1,11 @@
 "use strict";
 /* Module 4: Develop typed functions using TypeScript
    Lab Start  */
-/*  TODO: Convert the sortDescending and sortAscending functions to anonymous
+/*  TODO: Convert the sortDesc and sortAsc functions to anonymous
     functions. */
-/*  sortDescending is a comparison function that tells the sort method how to sort
+/*  sortDesc is a comparison function that tells the sort method how to sort
     numbers in descending order */
-let sortDescending = (a, b) => {
+let sortDesc = (a, b) => {
     if (a > b) {
         return -1;
         ;
@@ -18,9 +18,9 @@ let sortDescending = (a, b) => {
         return 0;
     }
 };
-/*  sortDescending is a comparison function that tells the sort method how to sort
+/*  sortAsc is a comparison function that tells the sort method how to sort
     numbers in ascending order. */
-let sortAscending = (a, b) => {
+let sortAsc = (a, b) => {
     if (a > b) {
         return 1;
     }
@@ -48,10 +48,10 @@ function buildArray(items, sortOrder) {
         }
     }
     if (sortOrder === 'ascending') {
-        return randomNumbers.sort(sortAscending);
+        return randomNumbers.sort(sortAsc);
     }
     else {
-        return randomNumbers.sort(sortDescending);
+        return randomNumbers.sort(sortDesc);
     }
 }
 let myArray1 = buildArray(12, 'ascending');
